@@ -1,9 +1,9 @@
-class ApisController < ApplicationController
+class Api::ApisController < ApplicationController
   before_action :set_api, only: [:show, :update, :destroy]
 
   # GET /apis
   def index
-    @apis = Api.all
+    @apis = Api.all.sorterbyname
 
     render json: @apis
   end
