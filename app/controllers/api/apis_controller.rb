@@ -18,7 +18,7 @@ class Api::ApisController < ApplicationController
     @api = Api.new(api_params)
 
     if @api.save
-      render json: @api, status: :created, location: @api
+      render json: @api, status: :created, location: api_api_url(@api)
     else
       render json: @api.errors, status: :unprocessable_entity
     end
